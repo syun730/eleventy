@@ -1,0 +1,34 @@
+---
+layout: layout.njk
+title: 記事タイトル
+authors2:
+---
+
+<h1>{{- title -}}</h1>
+<div>メイン著者： {{ authors[0].name }}</div>
+
+<ul>
+{%- for author in authors %}
+  <li>{{ author.name }} : {{ author.title }}</li>
+{%- endfor %}
+</ul>
+
+{# 0件だった場合の表示 #}
+<ul>
+{%- for author in authors2 %}
+  <li>{{ author.name }} : {{ author.title }}</li>
+{%- else %}
+  <li>著者はいません！</li>
+{%- endfor %}
+</ul>
+
+{# loop変数とif文 #}
+<ul>
+{%- for author in authors %}
+  {%- if loop.first %}
+    <li><strong>{{ author.name }} : {{ author.title }}</strong></li>
+  {%- else %}
+    <li>{{ author.name }} : {{ author.title }}</li>
+  {%- endif %}
+{%- endfor %}
+</ul>
