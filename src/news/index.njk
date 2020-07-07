@@ -1,0 +1,20 @@
+---
+layout: layout.njk
+title: ニュース一覧
+---
+
+<h1>{{ title }}</h1>
+<ul>
+{# {%- for item in collections.news %}
+  <li><a href="{{ item.url }}">{{ item.data.title }}</a></li>
+{%- endfor %} #}
+
+{# 順番を反対にする #}
+{%- for item in collections.news | reverse -%}
+  <li><a href="{{ item.url }}">{{ item.data.title }}</a></li>
+{%- endfor -%}
+</ul>
+
+{# 最初の1件だけを取得するにはfirst、最後の1件だけを取得するにはlastを使います #}
+{% set item = collections.news | first %}
+<div><a href="{{ item.url }}">{{ item.data.title }}</a></div>

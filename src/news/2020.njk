@@ -1,12 +1,10 @@
 ---
 layout: layout.njk
-title: サイトマップ
+title: 2020ニュース一覧
 ---
-
-<h1>{{ title | safe }}</h1>
-
+<h1>{{ title }}</h1>
 <ul>
-{%- for item in collections.all -%}
+{%- for item in collections.news | year(2020) -%}
   <li><a href="{{ item.url }}">{{ item.data.title }}</a></li>
 {%- endfor -%}
 </ul>
