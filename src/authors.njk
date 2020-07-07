@@ -1,0 +1,25 @@
+---
+layout: layout.njk
+pagination:
+  data: authors
+  size: 1
+  alias: author
+permalink: "authors/{{ author.name | slug }}/"
+renderData:
+  title: "{{ author.name }}"
+---
+
+<ul>
+  <li>{{ author.name }}</li>
+  <li>{{ author.title }}</li>
+</ul>
+
+<p>aaaaaabbbbbb</p>
+
+{% if pagination.href.previous %}
+<a href="{{ pagination.href.previous }}">前へ</a>
+{% endif %}
+
+{% if pagination.href.next %}
+<a href="{{ pagination.href.next }}">次へ</a>
+{% endif %}
