@@ -1,0 +1,9 @@
+---
+permalink: style.css
+---
+
+{%- set css %}
+  {% include "a.css" %}
+  {% include "b.css" %}
+{% endset -%}
+{{ css | postcss | cssmin | safe }}
