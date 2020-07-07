@@ -20,7 +20,7 @@ module.exports = function(eleventyConfig) {
   });
 
   // assetsディレクトリはそのまま出力先にコピー
-  eleventyConfig.addPassthroughCopy("assets");
+  eleventyConfig.addPassthroughCopy("src/assets");
 
   // css minify
   eleventyConfig.addFilter("cssmin", code => {
