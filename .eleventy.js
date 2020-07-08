@@ -8,8 +8,11 @@ const dayjs = require('dayjs');
 const CleanCSS = require("clean-css");
 const postcss = require("postcss");
 const autoprefixer = require("autoprefixer");
+const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
 module.exports = function(eleventyConfig) {
+  eleventyConfig.addPlugin(eleventyNavigationPlugin);
+
   eleventyConfig.addFilter("readableDate", dateObj => {
     return dayjs(dateObj).format('YYYY年M月D日');
   });
