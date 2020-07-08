@@ -12,5 +12,5 @@
   "scripts": {
     "build": "eleventy",
     "serve": "eleventy --serve"
-  },
+  }
 }
